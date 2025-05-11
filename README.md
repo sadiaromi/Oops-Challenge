@@ -88,14 +88,3 @@ Entry point for the application — Command Line Interface.
 python main.py
 
 
-✉️ Feedback
-We’d love to hear your thoughts!
-
-If you find this project helpful or have any suggestions for improvement:
-
-⭐ Give it a star
-
-💡 Suggest features or enhancements
-
-Your feedback keeps this project alive and evolving 🚀
-

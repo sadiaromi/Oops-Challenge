@@ -1,0 +1,20 @@
+[
+    {
+        "product_id": "1",
+        "name": "Microwaves",
+        "price": 8000.0,
+        "quantity_in_stock": 3,
+        "type": "Electronics",
+        "brand": "Anex",
+        "warranty_years": 1
+    },
+    {
+        "product_id": "2",
+        "name": "Kurti",
+        "price": 1000.0,
+        "quantity_in_stock": 5,
+        "type": "Clothing",
+        "size": "Medium",
+        "material": "cotton"
+    }
+]

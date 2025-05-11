@@ -87,6 +87,8 @@ Entry point for the application — Command Line Interface.
 ```bash
 python main.py
 
+---
+
 ## ✉️ Feedback
 
 We’d love to hear your thoughts!
@@ -97,4 +99,5 @@ If you find this project helpful or have any suggestions for improvement:
 - 💡 **Suggest features or enhancements**
 
 Your feedback keeps this project alive and evolving 🚀
+
 

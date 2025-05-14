@@ -13,7 +13,11 @@ def main():
         print("4. Save to File")
         print("5. Total Inventory Value")
         print("6. Remove Expired Groceries")
-        print("7. Exit")
+        print("7. Remove Product")
+        print("8. Search by Name")
+        print("9. Search by Type")
+        print("10. Restock Product")
+        print("11. Exit")
         choice = input("Enter your choice: ")
 
         try:
@@ -43,13 +47,13 @@ def main():
                     continue
 
                 inventory.add_product(p)
-                print("Product added.")
+                print("✅ Product added.")
 
             elif choice == "2":
                 pid = input("Enter product ID to sell: ")
                 qty = int(input("Quantity: "))
                 inventory.sell_product(pid, qty)
-                print("Product sold.")
+                print("✅ Product sold.")
 
             elif choice == "3":
                 for p in inventory.list_all_products():
@@ -57,24 +61,53 @@ def main():
 
             elif choice == "4":
                 inventory.save_to_file("data.json")
-                print("Inventory saved.")
+                print("💾 Inventory saved to file.")
 
             elif choice == "5":
-                print(f"Total Inventory Value: {inventory.total_inventory_value()}")
+                print(f"💰 Total Inventory Value: {inventory.total_inventory_value()}")
 
             elif choice == "6":
                 inventory.remove_expired_products()
-                print("Expired products removed.")
+                print("🧹 Expired products removed.")
 
             elif choice == "7":
-                print("Goodbye!")
+                pid = input("Enter product ID to remove: ")
+                inventory.remove_product(pid)
+                print("🗑️ Product removed.")
+
+            elif choice == "8":
+                name = input("Enter name to search: ")
+                results = inventory.search_by_name(name)
+                if results:
+                    for p in results:
+                        print(p)
+                else:
+                    print("No products found.")
+
+            elif choice == "9":
+                type_ = input("Enter product type to search: ")
+                results = inventory.search_by_type(type_)
+                if results:
+                    for p in results:
+                        print(p)
+                else:
+                    print("No products found.")
+
+            elif choice == "10":
+                pid = input("Enter product ID to restock: ")
+                qty = int(input("Quantity to add: "))
+                inventory.restock_product(pid, qty)
+                print("📦 Product restocked.")
+
+            elif choice == "11":
+                print("👋 Goodbye!")
                 break
 
             else:
-                print("Invalid choice.")
+                print("⚠️ Invalid choice.")
 
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"❌ Error: {e}")
 
 if __name__ == "__main__":
     main()
